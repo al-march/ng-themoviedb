@@ -1,0 +1,24 @@
+.movie-card {
+  box-sizing: border-box;
+  display: flex;
+  &__poster {
+    width: 100%;
+    max-width: 200px;
+    margin: -16px 0;
+    margin-left: -16px;
+  }
+  &__title {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+  &__content {
+    margin-left: 40px;
+  }
+  &__tags {
+    span {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #2a2a2a;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav fixedInViewport="true" opened #drawer mode="push">I'm a drawer 21212 12 12</mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary"><button style="margin-left: auto;" mat-raised-button (click)="drawer.toggle()">Настройки</button></mat-toolbar>
+
+    <div class="container">
+      <app-movies-list></app-movies-list>
+    </div>
+    <button style="margin-left: auto;" mat-raised-button (click)="drawer.toggle()">Настройки</button>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+

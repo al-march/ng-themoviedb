@@ -1,0 +1,22 @@
+<mat-card class="movie-card">
+
+  <img class="movie-card__poster" mat-card-image [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="Photo of a Shiba Inu">
+
+  <div class="movie-card__content">
+    <mat-card-header>
+      <mat-card-title class="movie-card__title">{{movie.title}}</mat-card-title>
+      <mat-card-subtitle>{{movie.release_date}}</mat-card-subtitle>
+      <mat-card-subtitle class="movie-card__tags">Оригинальный язык: <span>{{movie.original_language}}</span> | популярность: <span>{{movie.popularity}}</span></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{movie.overview}}
+      </p>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </div>
+
+</mat-card>
