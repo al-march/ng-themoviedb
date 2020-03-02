@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  
   <app-humburger (click)="openSettings.emit()"></app-humburger>
-  <button mat-raised-button>Популярные фильмы</button>
+  <button mat-button (click)="setAnotherRequest('getPopular')">Популярные фильмы</button>
+  <button mat-button (click)="setAnotherRequest('getTrending')">В тренде</button>
 </mat-toolbar>
