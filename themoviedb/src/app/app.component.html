@@ -4,10 +4,7 @@
 
   <mat-sidenav-content>
 
-    <mat-toolbar color="primary">
-      <button mat-raised-button>Популярные фильмы</button>
-      <button style="margin-left: auto;" mat-raised-button (click)="drawer.toggle()">Настройки</button>
-    </mat-toolbar>
+    <app-header (openSettings)="drawer.toggle()"></app-header>
 
     <div class="container">
       <app-movies-list></app-movies-list>
