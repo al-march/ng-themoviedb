@@ -1,5 +1,6 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,12 @@ export class MovieService {
   LANG = 'language=ru;';
 
   constructor(public http: HttpClient) {
+  }
+
+  public isAnotherRequest = new Subject();
+
+  setNewRequest(newRequest: string) {
+    this.isAnotherRequest.next(newRequest);
   }
 
   getTrending() {

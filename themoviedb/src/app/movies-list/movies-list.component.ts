@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {MovieService} from '../movie.service';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../movie.service';
 
 
 @Component({
@@ -9,20 +9,32 @@ import {MovieService} from '../movie.service';
 })
 export class MoviesListComponent implements OnInit {
 
-  @Input()
+  topMovies: any;
 
-  topMovies;
-
-  constructor(private  movieService: MovieService) {
+  constructor(private movieService: MovieService) {
   }
 
   ngOnInit(): void {
-    this.movieService.getTrending()
-      .subscribe((movies) => this.topMovies = movies.results, null, () => console.log(this.topMovies));
+    this.getTrending();
+
+    this.movieService.isAnotherRequest.subscribe((newRequest: string) => {
+      switch (newRequest) {
+        case 'getTrending':
+          this.getTrending()
+          break
+        case 'getPopular':
+          this.getPopular()
+          break
+      }
+    })
   }
 
   getPopular() {
     this.movieService.getPopular()
-    .subscribe((movies) => this.topMovies = movies.results, null, () => console.log(this.topMovies));
+      .subscribe((movies) => this.topMovies = movies.results);
+  }
+  getTrending() {
+    this.movieService.getTrending()
+      .subscribe((movies) => this.topMovies = movies.results);
   }
 }
