@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {MovieService} from "../movie.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {MovieService} from '../movie.service';
 
 
 @Component({
@@ -8,6 +8,8 @@ import {MovieService} from "../movie.service";
   styleUrls: ['./movies-list.component.scss']
 })
 export class MoviesListComponent implements OnInit {
+
+  @Input()
 
   topMovies;
 
@@ -19,4 +21,8 @@ export class MoviesListComponent implements OnInit {
       .subscribe((movies) => this.topMovies = movies.results, null, () => console.log(this.topMovies));
   }
 
+  getPopular() {
+    this.movieService.getPopular()
+    .subscribe((movies) => this.topMovies = movies.results, null, () => console.log(this.topMovies));
+  }
 }

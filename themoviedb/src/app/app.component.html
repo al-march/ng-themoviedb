@@ -4,12 +4,15 @@
 
   <mat-sidenav-content>
 
-    <mat-toolbar color="primary"><button style="margin-left: auto;" mat-raised-button (click)="drawer.toggle()">Настройки</button></mat-toolbar>
+    <mat-toolbar color="primary">
+      <button mat-raised-button>Популярные фильмы</button>
+      <button style="margin-left: auto;" mat-raised-button (click)="drawer.toggle()">Настройки</button>
+    </mat-toolbar>
 
     <div class="container">
       <app-movies-list></app-movies-list>
     </div>
-    <button style="margin-left: auto;" mat-raised-button (click)="drawer.toggle()">Настройки</button>
+
   </mat-sidenav-content>
 
 </mat-sidenav-container>
